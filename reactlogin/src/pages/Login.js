@@ -47,6 +47,8 @@ class Login extends Component {
 
         alert(`Bienvenido ${respuesta.nombre} ${respuesta.apellido_paterno}`);
 
+        window.location.href="./menu";
+
       } else{
         alert('El usuario o la contraseña no son correctos');
       }
@@ -54,6 +56,12 @@ class Login extends Component {
     .catch(error=>{
       console.log(error);
     })
+  }
+
+  componentDidMount(){
+    if(cookies.get('username')){
+      window.location.href="./menu";
+    }
   }
 
   render() {
