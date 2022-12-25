@@ -33,7 +33,7 @@ class Login extends Component {
       return response.data;
     })
     .then(response=>{
-      if(response.lenght>0){
+      if(response.length>0){
         var respuesta=response[0];
         cookies.set('id', respuesta.id, {path: '/'});
         
